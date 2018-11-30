@@ -33,6 +33,8 @@ namespace gra {
 		asio::ip::tcp::socket &Socket();
 		bool Write(PtrBuf data,FuncWriteComplete callback);
 		bool Read(PtrBuf buf, FuncReadComplete callback);
+		bool DecreaseAsyncCallback();
+		int  AsyncCount();
 	private:
 		TcpAsyncClient(asio::io_service& ioService);
 		void PostWrite();
@@ -46,7 +48,7 @@ namespace gra {
 
 		std::queue<std::pair<PtrBuf, FuncWriteComplete>>  _writeQueue;
 		std::queue<std::pair<PtrBuf, FuncReadComplete>>  _readQueue;
-
+		int _asyncCount = 0;
 		//for acceped client
 
 		//for !acceped client

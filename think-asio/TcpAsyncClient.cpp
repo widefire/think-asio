@@ -15,6 +15,7 @@ namespace gra {
 		while (_writeQueue.size()>0)
 		{
 			auto &pair = _writeQueue.front();
+			_asyncCount++;
 			asio::async_write(_socket, asio::buffer(*pair.first), pair.second);
 			_writeQueue.pop();
 		}
@@ -26,6 +27,7 @@ namespace gra {
 		while (_readQueue.size()>0)
 		{
 			auto &pair = _readQueue.front();
+			_asyncCount++;
 			asio::async_read(_socket, asio::buffer(*pair.first),
 				pair.second);
 			_readQueue.pop();
@@ -109,6 +111,24 @@ namespace gra {
 		_ioService.post(std::bind(&TcpAsyncClient::PostRead, this));
 
 		return true;
+	}
+
+	bool TcpAsyncClient::DecreaseAsyncCallback()
+	{
+		std::lock_guard<std::mutex> guard(_mux);
+		if (_asyncCount==0)
+		{
+			return false;
+		}
+
+		_asyncCount--;
+
+		return true;
+	}
+
+	int TcpAsyncClient::AsyncCount()
+	{
+		return _asyncCount;
 	}
 
 }
