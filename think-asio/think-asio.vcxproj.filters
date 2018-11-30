@@ -18,5 +18,22 @@
     <ClInclude Include="asio.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="commit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpAsyncServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpAsyncClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TcpAsyncServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpAsyncClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

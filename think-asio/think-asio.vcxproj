@@ -20,6 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asio.hpp" />
+    <ClInclude Include="commit.h" />
+    <ClInclude Include="TcpAsyncClient.h" />
+    <ClInclude Include="TcpAsyncServer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TcpAsyncClient.cpp" />
+    <ClCompile Include="TcpAsyncServer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
