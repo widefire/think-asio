@@ -42,11 +42,15 @@ namespace gra {
 		std::shared_ptr<TcpAsyncClient> client(ptr);
 		client->_isAcceptedClient = true;
 
+
+		
+		
+
 		return client;
 	}
 
 	std::shared_ptr<TcpAsyncClient> TcpAsyncClient::CreateClient(
-		asio::io_service& ioService, std::string addr, short port,
+		asio::io_service& ioService, std::string addr, int port,
 		std::string &ec)
 	{
 		auto ptr = new TcpAsyncClient(ioService);
@@ -129,6 +133,26 @@ namespace gra {
 	int TcpAsyncClient::AsyncCount()
 	{
 		return _asyncCount;
+	}
+
+	std::string TcpAsyncClient::Addr()
+	{
+		return _addr;
+	}
+
+	int TcpAsyncClient::Port()
+	{
+		return _port;
+	}
+
+	void TcpAsyncClient::SetAddr(std::string addr)
+	{
+		_addr = addr;
+	}
+
+	void TcpAsyncClient::SetPort(int port)
+	{
+		_port = port;
 	}
 
 }

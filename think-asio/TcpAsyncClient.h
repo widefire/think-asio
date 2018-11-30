@@ -13,7 +13,7 @@ namespace gra {
 	typedef std::shared_ptr<std::vector<uint8_t>> PtrBuf;
 	typedef std::function<void(std::shared_ptr<TcpAsyncClient>)> FuncAcceptedClient;
 	typedef std::function<void(std::string)> FuncLogger;
-	typedef std::function<void(const asio::error_code& error, std::size_t n)> FuncWriteComplete;
+	typedef std::function<void(const asio::error_code& error, std::size_t bytes_transferred)> FuncWriteComplete;
 	typedef std::function<void(const asio::error_code& error,std::size_t bytes_transferred)> FuncReadComplete;
 
 
@@ -26,7 +26,7 @@ namespace gra {
 		static std::shared_ptr<TcpAsyncClient> CreateClient(
 			asio::io_service& ioService,
 			std::string addr,
-			short port,
+			int port,
 			std::string &ec
 		);
 		virtual ~TcpAsyncClient();
@@ -35,6 +35,10 @@ namespace gra {
 		bool Read(PtrBuf buf, FuncReadComplete callback);
 		bool DecreaseAsyncCallback();
 		int  AsyncCount();
+		std::string Addr();
+		int Port();
+		void SetAddr(std::string addr);
+		void SetPort(int port);
 	private:
 		TcpAsyncClient(asio::io_service& ioService);
 		void PostWrite();
@@ -53,7 +57,7 @@ namespace gra {
 
 		//for !acceped client
 		std::string _addr = "";
-		short _port = -1;
+		int _port = -1;
 	};
 
 

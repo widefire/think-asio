@@ -14,10 +14,11 @@ namespace gra {
 	public:
 		TcpAsyncServer();
 		virtual ~TcpAsyncServer();
-		bool StartServer(short port);
+		bool StartServer(int port);
 		bool StopServer();
 		void SetLogger(FuncLogger funcLogger);
 		void SetAccepted(FuncAcceptedClient funcAccepted);
+		asio::io_service &GetIoService();
 	protected:
 		asio::io_service _ioService;
 	private:

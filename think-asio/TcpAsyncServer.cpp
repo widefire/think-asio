@@ -15,7 +15,7 @@ namespace gra {
 	TcpAsyncServer::~TcpAsyncServer()
 	{
 	}
-	bool TcpAsyncServer::StartServer(short port)
+	bool TcpAsyncServer::StartServer(int port)
 	{
 
 		if (_looping) {
@@ -66,6 +66,10 @@ namespace gra {
 			_acceptedClient = funcAccepted;
 		}
 	}
+	asio::io_service & TcpAsyncServer::GetIoService()
+	{
+		return _ioService;
+	}
 	void TcpAsyncServer::InitServer()
 	{
 		_logger = [&](std::string param) {
@@ -93,6 +97,9 @@ namespace gra {
 				_logger(strEc);
 			}
 			else {
+				auto remoteAddr = _clientWait->Socket().remote_endpoint().address();
+				_clientWait->SetAddr(remoteAddr.to_string());
+				_clientWait->SetPort(_clientWait->Socket().remote_endpoint().port());
 				_acceptedClient(_clientWait);
 			}
 			DoAccept();
