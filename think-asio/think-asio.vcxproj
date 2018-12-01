@@ -22,12 +22,14 @@
     <ClInclude Include="asio.hpp" />
     <ClInclude Include="commit.h" />
     <ClInclude Include="ForeverIOService.h" />
+    <ClInclude Include="HeartTimer.h" />
     <ClInclude Include="TcpAsyncClient.h" />
     <ClInclude Include="TcpAsyncServer.h" />
     <ClInclude Include="TcpSyncHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ForeverIOService.cpp" />
+    <ClCompile Include="HeartTimer.cpp" />
     <ClCompile Include="TcpAsyncClient.cpp" />
     <ClCompile Include="TcpAsyncServer.cpp" />
     <ClCompile Include="TcpSyncHelper.cpp" />

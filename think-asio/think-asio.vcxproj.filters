@@ -33,6 +33,9 @@
     <ClInclude Include="TcpSyncHelper.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HeartTimer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TcpAsyncServer.cpp">
@@ -45,6 +48,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="TcpSyncHelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HeartTimer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
