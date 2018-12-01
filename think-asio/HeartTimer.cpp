@@ -47,7 +47,6 @@ namespace gra
 	{
 		if (ec)
 		{
-
 		}
 		else
 		{
