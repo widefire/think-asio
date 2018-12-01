@@ -6,8 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "think-asio", "think-asio\think-asio.vcxproj", "{26409567-630E-485E-9C12-51D71921BF4B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Client.vcxproj", "{FF75A054-DC14-4C56-BD7B-4E213B5B4BAE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{26409567-630E-485E-9C12-51D71921BF4B} = {26409567-630E-485E-9C12-51D71921BF4B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "Server\Server.vcxproj", "{B55D5D92-5A71-46F6-853C-15CC7FBCD1AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{26409567-630E-485E-9C12-51D71921BF4B} = {26409567-630E-485E-9C12-51D71921BF4B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

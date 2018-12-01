@@ -14,6 +14,7 @@ namespace gra {
 
 	TcpAsyncServer::~TcpAsyncServer()
 	{
+		StopServer();
 	}
 	bool TcpAsyncServer::StartServer(int port)
 	{

@@ -27,12 +27,24 @@
     <ClInclude Include="TcpAsyncClient.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ForeverIOService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpSyncHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TcpAsyncServer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="TcpAsyncClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ForeverIOService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpSyncHelper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
