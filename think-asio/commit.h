@@ -6,5 +6,6 @@ steady_timer cancel 会触发一次错误回调
 close 同理也会触发未完成的读写回调
 重写网络库
 
-测试同步，timer
+
+asio::read write async_read async_write 确保收发数量
 */
