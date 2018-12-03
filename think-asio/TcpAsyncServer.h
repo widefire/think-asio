@@ -25,7 +25,7 @@ namespace gra {
 		void InitServer();
 		void DoAccept();
 	private:
-		bool _looping = false;
+		volatile bool _looping = false;
 		std::thread _acceptorLoop;
 		asio::ip::tcp::acceptor _acceptor;
 		std::shared_ptr<TcpAsyncClient> _clientWait = nullptr;

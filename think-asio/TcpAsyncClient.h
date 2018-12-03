@@ -52,7 +52,7 @@ namespace gra {
 
 		std::queue<std::pair<PtrBuf, FuncWriteComplete>>  _writeQueue;
 		std::queue<std::pair<PtrBuf, FuncReadComplete>>  _readQueue;
-		int _asyncCount = 0;
+		volatile int _asyncCount = 0;
 		//for acceped client
 
 		//for !acceped client

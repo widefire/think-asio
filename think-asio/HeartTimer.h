@@ -21,7 +21,10 @@ namespace gra
 		std::chrono::nanoseconds _timeoutValue;
 		asio::steady_timer _timer;
 		asio::error_code _errCode;
-		bool _stoped = false;
+		volatile bool _stoped = false;
+		std::mutex _mux;
+		std::condition_variable _con;
+		int _callbackCount = 0;
 	};
 }
 
